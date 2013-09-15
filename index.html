@@ -1,0 +1,184 @@
+<?php require( 'itens.php' ); ?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Capriola' rel='stylesheet' type='text/css'/>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        
+    </head>
+    <body>
+
+        <!-- Itens Overlay -->
+        <div class="overlay-all"></div>
+
+        <?php $count = 0; foreach ($itens as $key => $value): $count++; ?>
+        <div class="overlay-item" rel="<?php echo $count; ?>" >
+            <div class="wrap">
+                <a class="close" href="#">X</a>
+                <img src="itens/<?php echo $value['image']; ?>" />
+                <a class="next navigation" href="#" > &gt; </a>
+                <a class="prev navigation" href="#" > &lt; </a>
+            </div>
+        </div>
+        <?php endforeach ?>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <a href="#" class="btn-fb">
+            <img src="images/fb.png" />
+        </a>
+
+        <!-- Header -->
+        <header class="full-wrap" >
+            <div class="wrap">
+                <nav>
+                    <div class="left">
+                        <a href="#" class="link-menu" > HOME </a>
+                        <a href="#" class="link-menu" > SOBRE </a>
+                    </div>
+                    <a href="#" class="logo" >
+                        <h1><img src="images/logo-king.png"/></h1>
+                    </a>
+                    <div class="right">
+                        <a href="#" class="link-menu" > ONDE COMPRAR </a>
+                        <a href="#" class="link-menu" > CONTATO </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Shop -->
+        <div class="full-wrap" id="shop" >
+            
+            <div class="wrap">
+
+                <ul class="itens" >
+
+                    <?php $count = 0; foreach ($itens as $key => $value): $count++; ?>
+
+                        <li>
+                            <a href="javascript:void(0);" rel="<?php echo $count; ?>" title="<?php echo $value['title']; ?>">
+                                <div class="overlay">
+                                    <p><?php echo $value['description']; ?></p>
+                                </div>
+                                <img src="itens/<?php echo $value['thumb']; ?>" onload="showimage(this);"/>
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Sobre -->
+        <div class="full-wrap" id="sobre" >
+            <div class="wrap">
+                <h2>sobre</h2>
+                <div class="text">
+                    <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- onde comprar -->
+        <div class="full-wrap" id="onde-comprar" >
+            <div class="wrap">
+                <h2>onde comprar</h2>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/loja-example.jpg"/>
+                        </a>
+                        <a href="#">
+                            <h3>Age of Dreams</h3>
+                        </a>
+                        <p>Rua Marechal Deodoro, 1745 - Galeria Z - São Bernardo do Campo - SP</p> <br />
+                        <p>(11) 0999-0980</p>
+                        <p>(11) 0999-0980</p>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/loja-example.jpg"/>
+                        </a>
+                        <a href="#">
+                            <h3>Age of Dreams</h3>
+                        </a>
+                        <p>Rua Marechal Deodoro, 1745 - Galeria Z - São Bernardo do Campo - SP</p> <br />
+                        <p>(11) 0999-0980</p>
+                        <p>(11) 0999-0980</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contato -->
+        <div class="full-wrap" id="contato" >
+            <div class="wrap">
+                <h2>contato</h2>
+                <form>
+                    <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo </p>
+                    
+                    <div class="hold-input">
+                        <label>Nome</label>
+                        <input type="text"/>
+                    </div>
+
+                    <div class="hold-input">
+                        <label>Email</label>
+                        <input type="text"/>
+                    </div>
+
+                    <div class="hold-select">
+                        <label>Select</label>
+                        <div>
+                            <select>
+                                <option></option>
+                                <option>Opção 01</option>
+                                <option>Opção 02</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="hold-input">
+                        <label>Mensagem</label>
+                        <textarea></textarea>
+                    </div>
+
+                    <div class="hold-input">
+                        <input type="submit" value="enviar" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
